@@ -1,0 +1,16 @@
+.showlist-img {
+  width: 200px;
+  border-radius: 5px;
+}
+
+.showlist-div {
+  margin: 5px 20px;
+}
+
+.showlist-div p {
+  margin: 0 0 10px;
+}
+
+#searched-div {
+  flex-wrap: wrap;
+}

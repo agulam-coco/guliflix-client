@@ -1,0 +1,26 @@
+.show-cover-image {
+  margin: 10px 20px 0;
+  width: auto;
+  height: 300px;
+  border-radius: 6px;
+
+  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+}
+
+.show-cover-image:hover {
+  filter: brightness(70%);
+  -webkit-filter: brightness(70%);
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.show-name {
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
