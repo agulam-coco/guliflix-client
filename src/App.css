@@ -4,12 +4,18 @@ body {
 }
 
 main {
-  margin: 20px 280px;
+  margin: 20px 250px;
   /* border:2px solid orange; */
 }
 
 .flex-row {
   display: flex;
+  flex-direction: row
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .heading {

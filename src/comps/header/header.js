@@ -7,7 +7,7 @@ const Header = () => {
       <Link to="/">
         <div id="logo">GULIFLIX </div>
       </Link>
-      <p>powered by PANGEA</p>
+      <p>powered by PANGE<a id="zua" href="/for-the-boys">A</a></p>
     </header>
   );
 };

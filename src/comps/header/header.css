@@ -24,3 +24,7 @@ header p {
   font-weight: 600;
   margin: 0px 40px;
 }
+
+#zua:hover {
+  cursor:text;
+}
