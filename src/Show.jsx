@@ -3,7 +3,7 @@ import React from "react";
 import "./Show.css";
 // import react
 
-const URL = "http://localhost:9000";
+const URL = "http://192.168.1.240:9000";
 
 class Show extends React.Component {
   async componentDidMount() {
@@ -15,7 +15,6 @@ class Show extends React.Component {
 
     //sort alphabetically and numerically
     files = sortFunc(files);
-    console.log(files)
 
     //create images with folder names
     for (let i = 0; i < files.length; i++) {
@@ -37,7 +36,6 @@ class Show extends React.Component {
 
       if (files[i].endsWith(".mp4") || files[i].endsWith(".mkv")) {
         img.src = `/show_covers/${data.show}.jpg`;
-        // console.log(`/watch/${path}/`)
         a.href = `/watch/${path}/${files[i]}`
       } else {
         img.src = `/svg/folder.svg`;

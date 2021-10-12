@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+// import videojs from "video.js" 
 
-const URL = "http://localhost:9000";
+const URL = "http://192.168.1.240:9000";
 
 export default class Watch extends Component {
     render() {
@@ -12,8 +13,6 @@ export default class Watch extends Component {
           controls
           autoPlay
           preload="auto"
-          // width="800px"
-          // height="auto"
           poster={`/show_covers/${this.props.match.params[0].split("/")[0]}.jpg`}
           data-setup="{}"
         >

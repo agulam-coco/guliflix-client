@@ -1,5 +1,6 @@
 .show-cover-image {
   margin: 10px 20px 0;
+  max-width: 200px;
   width: auto;
   height: 300px;
   border-radius: 6px;

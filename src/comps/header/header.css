@@ -1,8 +1,10 @@
+
+
 header {
   padding: 15px 0;
   align-content: space-between;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
-    url(./header_background2.jpg);
+    url(../../backgrounds/background2.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;

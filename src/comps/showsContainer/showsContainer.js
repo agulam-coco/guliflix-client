@@ -43,6 +43,30 @@ class ShowsContainer extends React.Component {
             src="/show_covers/MHA S1.jpg"
           />
         </Link>
+        <Link to="/shows/MHA S2">
+          <Show
+            name="My Hero Academia S2"
+            src="/show_covers/MHA S2.jpg"
+          />
+        </Link>
+        <Link to="/shows/MHA S3">
+          <Show
+            name="My Hero Academia S3"
+            src="/show_covers/MHA S3.jpg"
+          />
+        </Link>
+        <Link to="/shows/MHA S4">
+          <Show
+            name="My Hero Academia S4"
+            src="/show_covers/MHA S4.jpg"
+          />
+        </Link>
+        <Link to="/shows/MHA S5">
+          <Show
+            name="My Hero Academia S5"
+            src="/show_covers/MHA S5.jpg"
+          />
+        </Link>
       </div>
     );
   }
