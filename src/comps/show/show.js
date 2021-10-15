@@ -1,5 +1,6 @@
 import React from "react";
 import "./show.css";
+import URL from "../../hostname/hostname";
 
 class Show extends React.Component {
   render() {
@@ -7,7 +8,7 @@ class Show extends React.Component {
       <div>
         <img
           className="show-cover-image"
-          src={this.props.src}
+          src={URL + this.props.src}
           alt={this.props.name}
         />
         <p className="show-name">{this.props.name} </p>

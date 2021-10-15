@@ -15,8 +15,8 @@ function App() {
           <Route path="/" exact children={() => <Home />} />
           <Route path="/shows/*" exact component={Show} />
           <Route path="/watch/*" exact component={Watch} />
-         </Switch>
-         <Footer />
+        </Switch>
+        <Footer />
       </Router>
     </div>
   );

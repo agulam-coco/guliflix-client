@@ -1,9 +1,8 @@
 // import { useParams } from "react-router-dom";
 import React from "react";
 import "./Show.css";
+import URL from "./hostname/hostname.js";
 // import react
-
-const URL = "http://192.168.1.240:9000";
 
 class Show extends React.Component {
   async componentDidMount() {
@@ -18,8 +17,8 @@ class Show extends React.Component {
 
     //create images with folder names
     for (let i = 0; i < files.length; i++) {
-      let a = document.createElement("a")
-      a.href = `${path}/${files[i]}`
+      let a = document.createElement("a");
+      a.href = `${path}/${files[i]}`;
 
       let parentDiv = document.createElement("div");
       parentDiv.className = "showlist-div flex-row";
@@ -30,13 +29,18 @@ class Show extends React.Component {
       let p = document.createElement("p");
       p.textContent = files[i];
 
-      a.appendChild(parentDiv)
+      a.appendChild(parentDiv);
       parentDiv.appendChild(img);
       parentDiv.appendChild(p);
 
-      if (files[i].endsWith(".mp4") || files[i].endsWith(".mkv")) {
-        img.src = `/show_covers/${data.show}.jpg`;
-        a.href = `/watch/${path}/${files[i]}`
+      if (
+        files[i].endsWith(".m4v") ||
+        files[i].endsWith(".mp4") ||
+        files[i].endsWith(".mkv")
+      ) {
+        img.src = `${URL}/show_covers/${data.show}.jpg`;
+
+        a.href = `/watch/${path}/${files[i]}`;
       } else {
         img.src = `/svg/folder.svg`;
       }
