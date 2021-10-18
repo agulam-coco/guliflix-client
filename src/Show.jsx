@@ -11,15 +11,14 @@ class Show extends React.Component {
 
     let data = await this.fetchShowData(path);
     let files = data["files"];
-
     //sort alphabetically and numerically
     files = sortFunc(files);
 
     //create images with folder names
     for (let i = 0; i < files.length; i++) {
       let a = document.createElement("a");
-      a.href = `${path}/${files[i]}`;
 
+      a.href = `${window.location}/${files[i]}`;
       let parentDiv = document.createElement("div");
       parentDiv.className = "showlist-div flex-row";
 
@@ -27,7 +26,15 @@ class Show extends React.Component {
       img.className = "showlist-img";
 
       let p = document.createElement("p");
-      p.textContent = files[i];
+      if (
+        files[i].endsWith(".m4v") ||
+        files[i].endsWith(".mp4") ||
+        files[i].endsWith(".mkv")
+      ) {
+        p.textContent = files[i].slice(0, -4);
+      } else {
+        p.textContent = files[i];
+      }
 
       a.appendChild(parentDiv);
       parentDiv.appendChild(img);

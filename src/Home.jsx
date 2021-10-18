@@ -7,10 +7,11 @@ class Home extends React.Component {
     shows: [],
   };
   async componentDidMount() {
-    let data = await this.fetchShowData("./");
+    let data = await this.fetchShowData(this.props.folder);
     this.setState({
       shows: data.files,
     });
+
   }
   async fetchShowData(show) {
     let res = await fetch(`${URL}/api/showinfo/${show}`);
@@ -23,7 +24,7 @@ class Home extends React.Component {
         {/* <div>
           <p className="heading">Shows</p>
         </div> */}
-        <ShowsContainer shows={this.state.shows} />
+        <ShowsContainer shows={this.state.shows} folder={this.props.folder} />
       </main>
     );
   }

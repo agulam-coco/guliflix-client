@@ -10,7 +10,7 @@ class ShowsContainer extends React.Component {
       <div id="shows-container" className="flex-row">
         {this.props.shows.map((show, index) => {
           return (
-            <Link to={`/shows/${show}`} key={index}>
+            <Link to={`/shows/${this.props.folder}/${show}`} key={index}>
               <Show name={`${show}`} src={`/show_covers/${show}.jpg`} />
             </Link>
           );

@@ -1,0 +1,18 @@
+.arrow-svg {
+  width: 40px;
+}
+
+.arrow-svg:hover {
+  -webkit-transition: width 0.15s ease-in-out;
+  -moz-transition: width 0.15s ease-in-out;
+  -o-transition: width 0.15s ease-in-out;
+  transition: width 0.15s ease-in-out;
+  width: 45px;
+}
+.arrow-parent {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 5px;
+  font-size: 15px;
+}

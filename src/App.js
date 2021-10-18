@@ -12,7 +12,12 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/" exact children={() => <Home />} />
+          <Route path="/" exact children={() => <Home folder="Anime" />} />
+          <Route
+            path="/for-the-boys"
+            exact
+            children={() => <Home folder="Zua" />}
+          />
           <Route path="/shows/*" exact component={Show} />
           <Route path="/watch/*" exact component={Watch} />
         </Switch>
