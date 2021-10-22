@@ -2,27 +2,26 @@ import React, { Component } from "react";
 import videojs from "video.js";
 import URL from "./hostname/hostname";
 
+import "videojs-hotkeys";
+
 import "./Watch.css";
 
-// Video js themes
+// Video js base css
 import "video.js/dist/video-js.css";
 
-// City
-import "@videojs/themes/dist/city/index.css";
-
-// Fantasy
-// import '@videojs/themes/dist/fantasy/index.css';
-
-// Forest
-// import '@videojs/themes/dist/forest/index.css';
-
-// Sea
-import "@videojs/themes/dist/sea/index.css";
+//Digital theatre
+import "@digitaltheatre/videojs-theme-dt/dist/theme/index.css";
 
 export default class Watch extends Component {
   componentDidMount() {
-    let player = videojs("my-video");
-    player.play();
+    videojs("my-video").ready(function () {
+      this.hotkeys({
+        volumeStep: 0.1,
+        seekStep: 5,
+        enableModifiersForNumbers: false,
+        alwaysCaptureHotkeys: true,
+      });
+    });
 
     this.arrow_func();
   }
@@ -80,7 +79,7 @@ export default class Watch extends Component {
       <main className="flex-row" onLoad={() => this.arrow_func()}>
         <video
           id="my-video"
-          className="video-js vjs-fluid vjs-theme-sea"
+          className="video-js vjs-fluid vjs-theme-dt"
           controls
           preload="auto"
           poster={`/show_covers/${

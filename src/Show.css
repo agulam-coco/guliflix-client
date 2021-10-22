@@ -20,9 +20,3 @@
 #searched-div {
   flex-wrap: wrap;
 }
-
-.loading {
-  background: transparent url("./loading/loading.svg") center no-repeat;
-  height: 300px;
-  width: 200px;
-}
