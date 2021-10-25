@@ -9,7 +9,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Home, Show, Watch } from ".";
+import Home from "./pages/Home";
+import Show from "./pages/Show";
+import Watch from "./pages/Watch";
+import Merch from "./pages/Merch";
+import notFound from "./comps/notFound/notFound";
 
 import URL from "./hostname/hostname";
 
@@ -97,6 +101,8 @@ class App extends React.Component {
             />
             <Route path="/shows/*" exact component={Show} />
             <Route path="/watch/*" exact component={Watch} />
+            <Route path="/merch" exact component={Merch} />
+            <Route component={notFound} />
           </Switch>
           <Footer />
         </Router>

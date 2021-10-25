@@ -1,6 +1,6 @@
 import React from "react";
-import ShowsContainer from "./comps/showsContainer/showsContainer";
-import URL from "./hostname/hostname";
+import ShowsContainer from "../comps/showsContainer/showsContainer";
+import URL from "../hostname/hostname";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

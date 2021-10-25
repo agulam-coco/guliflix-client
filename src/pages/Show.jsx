@@ -1,7 +1,7 @@
 // import { useParams } from "react-router-dom";
 import React from "react";
 import "./Show.css";
-import URL from "./hostname/hostname.js";
+import URL from "../hostname/hostname.js";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import videojs from "video.js";
-import URL from "./hostname/hostname";
+import URL from "../hostname/hostname";
 
 import "videojs-hotkeys";
 
