@@ -49,37 +49,49 @@ class Show extends React.Component {
       a.href = `/shows/${path}/${files[i]}`;
 
       let parentDiv = document.createElement("div");
-      parentDiv.className = "showlist-div flex-row";
+      parentDiv.className = "showlist-div flex-row tooltip tooltip-right";
 
       let img = document.createElement("img");
       img.className = "showlist-img";
 
       let p = document.createElement("p");
+
+      let span = document.createElement("span");
+      span.className = "tooltiptext tooltiptext-right";
+
       if (
         files[i].endsWith(".m4v") ||
         files[i].endsWith(".mp4") ||
         files[i].endsWith(".mkv")
       ) {
-        p.textContent = files[i].slice(0, -4);
+        //set p to shown name without extension
+        let showName = files[i].slice(0, -4);
+        p.textContent = showName;
+
+        //set image cover
+        img.src = `${URL}/show_covers/${data.show}.jpg`;
+
+        //set a link
+        a.href = `/watch/${path}/${files[i]}`;
+
+        //set tooltip span
+        span.textContent = "🎥 Stream " + showName;
       } else {
-        p.textContent = files[i];
+        //set folder image
+        let folderName = files[i];
+        img.src = `/svg/folder.svg`;
+
+        //set folder name
+        p.textContent = folderName;
+
+        //tooltip span for folder
+        span.textContent = "📂 Open " + folderName;
       }
 
       a.appendChild(parentDiv);
       parentDiv.appendChild(img);
       parentDiv.appendChild(p);
-
-      if (
-        files[i].endsWith(".m4v") ||
-        files[i].endsWith(".mp4") ||
-        files[i].endsWith(".mkv")
-      ) {
-        img.src = `${URL}/show_covers/${data.show}.jpg`;
-
-        a.href = `/watch/${path}/${files[i]}`;
-      } else {
-        img.src = `/svg/folder.svg`;
-      }
+      parentDiv.appendChild(span);
 
       let div = document.getElementById("searched-div");
       div.appendChild(a);
