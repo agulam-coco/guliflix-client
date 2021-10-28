@@ -29,9 +29,9 @@ class notFound extends Component {
   render() {
     return (
       <main>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-md-12 mt-5 mb-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-12 col-md-12 mt-5 mb-5">
               <svg
                 width="100%"
                 height="auto"
@@ -1205,7 +1205,7 @@ class notFound extends Component {
             </div>
           </div>
         </div>
-        <div class="button-container flex-row">
+        <div className="button-container flex-row">
           <Link to="/">
             <button type="button">Go Back home</button>
           </Link>

@@ -1,5 +1,13 @@
-.show-cover-image {
+.img-skeleton {
   margin: 10px 20px 0;
+  max-width: 200px;
+  width: auto;
+  height: 300px;
+  border-radius: 6px;
+}
+
+.show-cover-image {
+  background-color: #8c8c8c;
   max-width: 200px;
   width: auto;
   height: 300px;
@@ -22,6 +30,7 @@
 .show-name {
   font-weight: 500;
   margin: 0;
+  margin-top: 4px;
   margin-bottom: 10px;
   margin-left: 20px;
 }

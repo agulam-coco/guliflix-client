@@ -1,12 +1,14 @@
 import React from "react";
 import "./creator.css";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 export default function Creator(props) {
   return (
     <div className="creator-box">
       <a class="tg-link" href={`tg://resolve?domain=${props.username}`}>
-        <img
-          class="creator-img"
+        <LazyLoadImage
+          className="creator-img"
           src={props.src}
           alt={"Image for" + props.creator}
           height="80px"

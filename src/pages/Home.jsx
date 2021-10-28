@@ -8,7 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 class Home extends React.Component {
   state = {
     shows: [],
+    loading: true,
   };
+
   async componentDidMount() {
     let data;
     try {
@@ -36,10 +38,13 @@ class Home extends React.Component {
       console.error(err);
       return;
     }
+
     this.setState({
       shows: data.files,
+      loading: false,
     });
   }
+
   async fetchShowData(show) {
     let res = await fetch(`${URL}/api/showinfo/${show}`);
     return await res.json();
@@ -48,7 +53,11 @@ class Home extends React.Component {
   render() {
     return (
       <main>
-        <ShowsContainer shows={this.state.shows} folder={this.props.folder} />
+        <ShowsContainer
+          loading={this.state.loading}
+          shows={this.state.shows}
+          folder={this.props.folder}
+        />
       </main>
     );
   }

@@ -4,20 +4,26 @@ import Show from "../show/show";
 
 import { Link, withRouter } from "react-router-dom";
 
-class ShowsContainer extends React.Component {
-  render() {
-    return (
-      <div id="shows-container" className="flex-row">
-        {this.props.shows.map((show, index) => {
+function ShowsContainer(props) {
+  const shows = props.loading
+    ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    : props.shows;
+
+  return (
+    <div id="shows-container" className="flex-row">
+      {(props.loading &&
+        shows.map((show) => {
+          return <Show loading key={show} />;
+        })) ||
+        shows.map((show, index) => {
           return (
-            <Link to={`/shows/${this.props.folder}/${show}`} key={index}>
+            <Link to={`/shows/${props.folder}/${show}`} key={index}>
               <Show name={`${show}`} src={`/show_covers/${show}.jpg`} />
             </Link>
           );
         })}
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default withRouter(ShowsContainer);

@@ -28,7 +28,7 @@ export default function Footer(props) {
     <footer className="flex-row">
       <div className="flex-row" style={{ alignItems: "center", width: "100%" }}>
         <div>
-          <img id="ampem-drawing" alt="Face" height="90px" />
+          <img id="ampem-drawing" alt="Face Drawing" height="90px" />
         </div>
         <table style={{ height: "40px" }}>
           <tr>
@@ -48,7 +48,7 @@ export default function Footer(props) {
             <LogoTrail size="10px" />
           </tr>
         </table>
-        <div class="credits">
+        <div className="credits">
           <small>
             <b>Sun</b> icon made by &#160;
             <a href="https://www.flaticon.com/authors/smalllikeart">
