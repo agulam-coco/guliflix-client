@@ -44,14 +44,26 @@ export default class Watch extends Component {
 
       let parentDiv = document.createElement("div");
       parentDiv.className = "arrow-parent flex-column";
+      
 
       let img = document.createElement("img");
       img.className = "arrow-svg";
 
+      //set border radius of arrow so that white does not discolor
+      img.style.borderRadius = "50px";
+
+      let body = document.getElementsByTagName("body")[0];
+
+      //if dark theme set backbround color to white
+      img.style.backgroundColor =
+        this.props.theme === body.dark ? "#fff" : "inherit";
+
       if (direction === "next") {
         img.src = "/svg/circle-right.svg";
+        img.alt = "Next video arrow image";
       } else {
         img.src = "/svg/circle-left.svg";
+        img.alt = "Previous video arrow image";
       }
 
       let p = document.createElement("p");

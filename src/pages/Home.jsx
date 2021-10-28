@@ -48,9 +48,6 @@ class Home extends React.Component {
   render() {
     return (
       <main>
-        {/* <div>
-          <p className="heading">Shows</p>
-        </div> */}
         <ShowsContainer shows={this.state.shows} folder={this.props.folder} />
       </main>
     );

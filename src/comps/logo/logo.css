@@ -1,0 +1,15 @@
+.red {
+  color: #ff0000;
+}
+
+#logo {
+  font-weight: 600;
+}
+
+#zua {
+  cursor: text;
+}
+
+#zua:hover {
+  cursor: text;
+}

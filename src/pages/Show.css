@@ -1,13 +1,14 @@
 .showlist-img {
   height: 20px;
   border-radius: 5px;
-  margin-right: 3px;
+  margin-right: 5px;
 }
 
 .showlist-div {
-  padding: 5px 5px;
+  width: 100%;
+  padding: 10px 15px;
   margin: 5px 20px;
-  border-radius: 5px;
+  border-radius: 30px;
   border: 2px solid rgba(210, 210, 210, 0.1);
 }
 .showlist-div:hover {

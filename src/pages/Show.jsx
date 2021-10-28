@@ -76,10 +76,16 @@ class Show extends React.Component {
 
         //set tooltip span
         span.textContent = "🎥 Stream " + showName;
+
+        //set img alt
+        img.alt = showName + " cover image";
       } else {
         //set folder image
         let folderName = files[i];
         img.src = `/svg/folder.svg`;
+
+        //folder alt
+        img.alt = folderName + " folder";
 
         //set folder name
         p.textContent = folderName;
@@ -121,4 +127,5 @@ function sortFunc(files) {
 
   return files;
 }
+
 export default Show;

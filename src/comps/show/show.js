@@ -9,7 +9,7 @@ class Show extends React.Component {
         <img
           className="show-cover-image"
           src={URL + this.props.src}
-          alt={this.props.name}
+          alt={this.props.name + " cover image"}
         />
         <p className="show-name">{this.props.name} </p>
         <span className="tooltiptext">📺 Watch {this.props.name}</span>

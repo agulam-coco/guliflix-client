@@ -1,35 +1,37 @@
 header {
   padding: 15px 0;
-  align-content: space-between;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
-    url(../../backgrounds/background2.jpg);
-  background-repeat: no-repeat;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), */
+  /* url(../../backgrounds/background2.jpg); */
+  /* background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
-  color: white;
+  background-size: 100%; */
+  color: inherit;
 
   /* border-bottom: 2px solid black; */
   border-radius: 5px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
 }
 
 header p {
   font-size: 18px;
   text-align: right;
   margin: auto 50px 5px auto;
-  cursor: text;
 }
 
-#logo {
-  font-size: 35px;
-  font-weight: 600;
-  margin: 0px 40px;
+.nav-link {
+  margin: auto;
+  height: fit-content;
+  color: rgba(0,0,0,0.9);
+  text-decoration: none;
+  padding: 5px 0;
+  text-align: center;
+  transition: border-color 250ms ease;
 }
 
-#zua {
-  cursor: text;
+.nav-link:hover {
+  border-bottom-color: #ff0000;
 }
 
-#zua:hover {
-  cursor: text;
+.nav-link span {
+  width: fit-content;
 }
