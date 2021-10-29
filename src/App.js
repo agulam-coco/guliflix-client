@@ -19,6 +19,7 @@ import Home from "./pages/Home";
 import Show from "./pages/Show";
 import Watch from "./pages/Watch";
 import Merch from "./pages/Merch";
+import GenreList from "./pages/GenreList";
 import notFound from "./comps/notFound/notFound";
 
 import URL from "./hostname/hostname";
@@ -53,13 +54,29 @@ function App() {
           ></Hotkeys>
           <Header theme={theme} toggleTheme={toggleTheme} />
           <Switch>
-            <Route path="/" exact children={() => <Home folder="Anime" />} />
+            <Route path="/" exact component={GenreList} />
+            <Route
+              path="/Anime"
+              exact
+              children={() => <Home folder="Anime" />}
+            />
+            <Route
+              path="/Movies"
+              exact
+              children={() => <Home folder="Movies" />}
+            />
+            <Route
+              path="/Series"
+              exact
+              children={() => <Home folder="Series" />}
+            />
+
             <Route
               path="/for-the-boys"
               exact
               children={() => <Home folder="Zua" />}
             />
-            <Route path="/shows/*" exact component={Show} />
+            <Route path="/view/*" exact component={Show} />
             <Route path="/watch/*" exact component={Watch} />
             <Route path="/merch" exact component={Merch} />
             <Route component={notFound} />

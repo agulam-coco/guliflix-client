@@ -26,7 +26,7 @@ export default function Footer(props) {
 
   return (
     <footer className="flex-row">
-      <div className="flex-row" style={{ alignItems: "center", width: "100%" }}>
+      <div className="flex-row" style={{ alignItems: "center", width: "100%" , fontSize:"10px"}}>
         <div>
           <img id="ampem-drawing" alt="Face Drawing" height="90px" />
         </div>

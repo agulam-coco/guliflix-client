@@ -16,7 +16,6 @@ function Show(props) {
       duration={1.5}
     >
       <div
-        className="tooltip"
         style={{
           width: "200px",
           height: "fit-content",
@@ -40,9 +39,7 @@ function Show(props) {
           )) ||
             props.name}
         </p>
-        {props.loading || (
-          <span className="tooltiptext">📺 Watch {props.name}</span>
-        )}
+        
       </div>
     </SkeletonTheme>
   );

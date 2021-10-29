@@ -3,36 +3,19 @@ import React from "react";
 import "./Show.css";
 import URL from "../hostname/hostname.js";
 
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 // import react
+import { serverNotificationPromise } from "./helperfuncs/toastNotificationPromise";
+import { fetchShowData } from "./helperfuncs/fetchShowData";
 
 class Show extends React.Component {
   async componentDidMount() {
     //get the folder
     const path = this.props.match.params[0];
+    const folder = path.split("/")[0];
+
     let data;
     try {
-      data = await toast.promise(this.fetchShowData(path), {
-        pending: {
-          render() {
-            return "Fetching show data";
-          },
-        },
-        success: {
-          render() {
-            return "Data fetched successfully 👌";
-          },
-          autoClose: 900,
-        },
-        error: {
-          render({ err }) {
-            // When the promise reject, data will contains the error
-            return `Something weird happened 🤯`;
-          },
-          autoClose: 5000,
-        },
-      });
+      data = await serverNotificationPromise(fetchShowData(path));
     } catch (err) {
       console.error(err);
       return;
@@ -46,18 +29,19 @@ class Show extends React.Component {
     //create images with folder names
     for (let i = 0; i < files.length; i++) {
       let a = document.createElement("a");
-      a.href = `/shows/${path}/${files[i]}`;
+      a.href = `/view/${path}/${files[i]}`;
 
       let parentDiv = document.createElement("div");
-      parentDiv.className = "showlist-div flex-row tooltip tooltip-right";
+      parentDiv.className = "showlist-div flex-column";
 
       let img = document.createElement("img");
       img.className = "showlist-img";
 
-      let p = document.createElement("p");
+      if (folder === "Movies") {
+        img.className = "showlist-img movie-img";
+      }
 
-      let span = document.createElement("span");
-      span.className = "tooltiptext tooltiptext-right";
+      let p = document.createElement("p");
 
       if (
         files[i].endsWith(".m4v") ||
@@ -69,16 +53,16 @@ class Show extends React.Component {
         p.textContent = showName;
 
         //set image cover
-        img.src = `${URL}/show_covers/${data.show}.jpg`;
+        img.src = `${URL}/api/cover-image/${data.req_path}/${showName}.jpg`;
 
         //set a link
         a.href = `/watch/${path}/${files[i]}`;
 
-        //set tooltip span
-        span.textContent = "🎥 Stream " + showName;
-
         //set img alt
         img.alt = showName + " cover image";
+      } else if (files[i].endsWith(".jpg")) {
+        //skip cover images
+        continue;
       } else {
         //set folder image
         let folderName = files[i];
@@ -89,30 +73,21 @@ class Show extends React.Component {
 
         //set folder name
         p.textContent = folderName;
-
-        //tooltip span for folder
-        span.textContent = "📂 Open " + folderName;
       }
 
       a.appendChild(parentDiv);
       parentDiv.appendChild(img);
       parentDiv.appendChild(p);
-      parentDiv.appendChild(span);
 
       let div = document.getElementById("searched-div");
       div.appendChild(a);
     }
   }
 
-  async fetchShowData(show) {
-    let res = await fetch(`${URL}/api/showinfo/${show}`);
-    return await res.json();
-  }
-
   render() {
     return (
       <main>
-        <div id="searched-div" className="flex-column"></div>
+        <div id="searched-div" className="flex-row"></div>
       </main>
     );
   }

@@ -17,8 +17,11 @@ function ShowsContainer(props) {
         })) ||
         shows.map((show, index) => {
           return (
-            <Link to={`/shows/${props.folder}/${show}`} key={index}>
-              <Show name={`${show}`} src={`/show_covers/${show}.jpg`} />
+            <Link to={`/view/${props.folder}/${show}`} key={index}>
+              <Show
+                name={`${show}`}
+                src={`/show_covers/${props.folder}/${show}.jpg`}
+              />
             </Link>
           );
         })}

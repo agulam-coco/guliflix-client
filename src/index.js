@@ -16,6 +16,7 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals(console.log);
 
+export { default as GenreList } from "./pages/GenreList";
 export { default as Home } from "./pages/Home";
 export { default as Show } from "./pages/Show";
 export { default as Watch } from "./pages/Watch";

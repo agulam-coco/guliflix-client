@@ -1,9 +1,8 @@
 import React from "react";
 import ShowsContainer from "../comps/showsContainer/showsContainer";
-import URL from "../hostname/hostname";
 
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { fetchShowData } from "./helperfuncs/fetchShowData";
+import { serverNotificationPromise } from "./helperfuncs/toastNotificationPromise";
 
 class Home extends React.Component {
   state = {
@@ -14,26 +13,8 @@ class Home extends React.Component {
   async componentDidMount() {
     let data;
     try {
-      data = await toast.promise(this.fetchShowData(this.props.folder), {
-        pending: {
-          render() {
-            return "Fetching show data";
-          },
-        },
-        success: {
-          render() {
-            return "Data fetched successfully 👌";
-          },
-          autoClose: 900,
-        },
-        error: {
-          render({ err }) {
-            // When the promise reject, data will contains the error
-            return `Something weird happened 🤯`;
-          },
-          autoClose: 5000,
-        },
-      });
+      //fetch show data
+      data = await serverNotificationPromise(fetchShowData(this.props.folder));
     } catch (err) {
       console.error(err);
       return;
@@ -43,11 +24,6 @@ class Home extends React.Component {
       shows: data.files,
       loading: false,
     });
-  }
-
-  async fetchShowData(show) {
-    let res = await fetch(`${URL}/api/showinfo/${show}`);
-    return await res.json();
   }
 
   render() {

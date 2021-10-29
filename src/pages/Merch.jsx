@@ -2,6 +2,10 @@ import React, { Component } from "react";
 
 export default class Merch extends Component {
   render() {
-    return <main><b style={{margin: "300px 30px"}}>COMING SOON</b></main>;
+    return (
+      <main style={{ textAlign: "center" }}>
+        <b style={{ margin: "auto", fontSize: "90px" }}>COMING SOON</b>
+      </main>
+    );
   }
 }

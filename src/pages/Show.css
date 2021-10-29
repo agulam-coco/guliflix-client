@@ -1,21 +1,39 @@
 .showlist-img {
-  height: 20px;
+  transition: width 250ms;
+  width: 200px;
   border-radius: 5px;
   margin-right: 5px;
 }
 
+.showlist-img:hover {
+  width: 250px;
+}
+
+.showlist-img:hover + p {
+  color: #ff0000;
+}
+
+.movie-img {
+  width: 400px;
+}
+
+.movie-img:hover {
+  width: 450px;
+}
+
 .showlist-div {
-  width: 100%;
+  justify-items: center;
+  width: 260px;
+  height: 200px;
   padding: 10px 15px;
-  margin: 5px 20px;
+  margin: 30px;
   border-radius: 30px;
-  border: 2px solid rgba(210, 210, 210, 0.1);
 }
 .showlist-div:hover {
-  background-color: rgba(210, 210, 210, 0.1);
+  background-color: rgba(210, 210, 210, 0.02);
 }
 .showlist-div p {
-  margin: 0 0 10px;
+  margin: 10px 0 0px;
 }
 
 #searched-div {
