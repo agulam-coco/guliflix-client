@@ -6,9 +6,14 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
+#root {
+  width: 100vw;
+}
+
 main {
-  margin: 20px 250px;
-  /* border:2px solid orange; */
+  display: flex;
+  align-items: center;
+  margin: 20px 200px;
 }
 
 .flex-row {
@@ -24,4 +29,10 @@ main {
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 964px) {
+  main {
+    margin: auto 0;
+  }
 }

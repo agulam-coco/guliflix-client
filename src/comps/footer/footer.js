@@ -26,7 +26,10 @@ export default function Footer(props) {
 
   return (
     <footer className="flex-row">
-      <div className="flex-row" style={{ alignItems: "center", width: "100%" , fontSize:"10px"}}>
+      <div
+        className="flex-row footer-container"
+        style={{ alignItems: "center", width: "100%", fontSize: "10px" }}
+      >
         <div>
           <img id="ampem-drawing" alt="Face Drawing" height="90px" />
         </div>
@@ -64,23 +67,26 @@ export default function Footer(props) {
             <a href="https://www.flaticon.com">www.flaticon.com</a>
           </small>
         </div>
-        <div className="flex-row" style={{ marginLeft: "auto" }}>
+        <div
+          className="flex-row creator-container"
+          style={{ marginLeft: "auto" }}
+        >
           <table className="creator-table">
             <thead>
               <tr className="creator-branches">
-                <th>Web Design</th>
-                <th>Graphic Design</th>
-                <th>Production and Marketing</th>
+                <th scope="col">Web Design</th>
+                <th scope="col">Graphic Design</th>
+                <th scope="col">Production and Marketing</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>
+                <td data-label="Web Design">
                   <section className="flex-row">
                     <Creator src={Icon2} creator="Jason" username="agu1am" />
                   </section>
                 </td>
-                <td>
+                <td data-label="Graphic Design">
                   <section className="flex-row">
                     <Creator src={Icon7} creator="Dwayne" username="G_Gronze" />
                     <Creator
@@ -95,7 +101,7 @@ export default function Footer(props) {
                     />
                   </section>
                 </td>
-                <td>
+                <td data-label="Production and Marketing">
                   <section className="flex-row">
                     <Creator src={Icon5} creator="Dasebre" username="dasebre" />
                     <Creator

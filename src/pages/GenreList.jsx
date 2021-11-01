@@ -23,9 +23,12 @@ function GenreList() {
     }
   }, []);
   return (
-    <main>
-      <GenreContainer loading={loading} genres={genres} folder="Genres" />
-    </main>
+    <>
+      {/* <SearchBar allowSeasons={false} /> */}
+      <main>
+        <GenreContainer loading={loading} genres={genres} folder="Genres" />
+      </main>
+    </>
   );
 }
 

@@ -18,3 +18,17 @@
 .creator-box p {
   font-size: 10px;
 }
+
+@media only screen and (max-width: 964px) {
+  .creator-img {
+    height: 50px;
+  }
+  .tg-link:hover .creator-img {
+    height: 70px;
+  }
+
+  .creator-container {
+    margin: auto;
+    margin-top: 20px;
+  }
+}

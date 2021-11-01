@@ -12,4 +12,8 @@ body{
   border-bottom: 3px solid ${({ theme }) => theme.navLinkBorder};
   color: ${({ theme }) => theme.color};
 }
+
+.search-result-div {
+  background:${({ theme }) => theme.searchBg};
+}
 `;
